@@ -1,9 +1,36 @@
-# Blinking Gopher
+# Gotchi
 
-![example](assets/blinking.gif)
+Your very own digital Gopher companion.
 
-This is an example of how to do animation. To get a smooth result it is important to set `FlickerFree: true` when configuring the display.
+## Getting Started
 
-## Creating images
+### How to load this app to a Badger 2040W
 
-Under the `assets` folder you can find three png files. These images were converted to `[]uint8` by using a utility you can find in the `cmd` folder in the root of this project. The utility still needs some work but has everything you need to turn a PNG to a suitable image to be displayed on your badge.
+1. [Install Go](https://go.dev/dl/)
+2. [Install tinygo](https://tinygo.org/getting-started/install/)
+
+Run the following command:
+
+```sh
+tinygo flash -target badger2040-w .
+```
+
+### Creating images
+
+1. Draw a picture
+2. Save it as a png under the assets folder
+3. Run `cd tools/convertimages && go run main.go && cd -` to create a bin file for your new picture, the file will be outputed to the `bin` directory
+4. Add it to the code using `go:embed`
+
+## Contributing
+
+Any help is welcome!
+
+* Draw some pictures
+* Add new fun things for the Gopher to do
+
+Check the Github issues :)
+
+## Useful resources
+
+* [conejoninja/badger2040](https://github.com/conejoninja/badger2040)
